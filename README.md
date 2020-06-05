@@ -18,6 +18,42 @@ In the **Core Module** we commonly place our singleton services and modules that
 <br><br>
 > **Note:** Modules like **HttpClientModule** should be imported here, once in the application.
 
+## Project Folder Structure Example
+`
+|-- app
+     |-- modules
+       |-- home
+           |-- [+] components
+           |-- [+] pages
+           |-- home-routing.module.ts
+           |-- home.module.ts
+     |-- core
+       |-- [+] authentication
+       |-- [+] footer
+       |-- [+] guards
+       |-- [+] http
+       |-- [+] interceptors
+       |-- [+] mocks
+       |-- [+] services
+       |-- [+] header
+       |-- core.module.ts
+       |-- ensureModuleLoadedOnceGuard.ts
+       |-- logger.service.ts
+     |
+     |-- shared
+          |-- [+] components
+          |-- [+] directives
+          |-- [+] pipes
+          |-- [+] models
+     |
+     |-- [+] configs
+|-- assets
+     |-- scss
+          |-- [+] partials
+          |-- _base.scss
+          |-- styles.scss
+`
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.

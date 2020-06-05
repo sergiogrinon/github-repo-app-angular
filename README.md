@@ -19,7 +19,7 @@ In the **Core Module** we commonly place our singleton services and modules that
 > **Note:** Modules like **HttpClientModule** should be imported here, once in the application.
 
 ## Project Folder Structure Example
-`
+```
 |-- app
      |-- modules
        |-- home
@@ -52,7 +52,7 @@ In the **Core Module** we commonly place our singleton services and modules that
           |-- [+] partials
           |-- _base.scss
           |-- styles.scss
-`
+```
 
 ## Development server
 

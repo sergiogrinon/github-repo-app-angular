@@ -2,6 +2,16 @@
 
 GitHub Repo App in Angular.
 
+# Project structure and commands tutorial | Best Practices
+
+## Core Module
+
+In the Core Module we commonly place our singleton services and modules that will be used across the app but only need to be imported **once**.
+<br>
+To create the CoreModule run the following command:
+<br>
+`ng g m core`
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.

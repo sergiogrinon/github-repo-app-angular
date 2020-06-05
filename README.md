@@ -2,12 +2,12 @@
 
 GitHub Repo App in Angular.
 
-# Project structure and commands tutorial | Best Practices
+# Project Structure and Commands Tutorial | Best Practices
 
 ## Core Module
 
 In the **Core Module** we commonly place our singleton services and modules that will be used across the app but only need to be imported **once**.
-<br><br>
+<br>
 > To create the **CoreModule** run the following command:
 <br><br>
 `ng g m core`
@@ -18,7 +18,7 @@ In the **Core Module** we commonly place our singleton services and modules that
 <br><br>
 > **Note:** Modules like **HttpClientModule** should be imported here, once in the application.
 
-## Project Folder Structure Example
+## Project Folder Structure - Sample
 ```
 |-- app
      |-- modules
@@ -53,6 +53,17 @@ In the **Core Module** we commonly place our singleton services and modules that
           |-- _base.scss
           |-- styles.scss
 ```
+## Variable Best Practices
+
+Whenever you declare a variable there is 2 options/scenarios:
+- A) Assign a value when the variable is declared.
+- B) Give the variable a value during the execution.
+<br>
+In 'A' case, it's not neccesary to specify the type, because its taking a value inits inizialization.
+<br>
+In case 'B' its good to specify the data type that will be stored in the declared variable.
+
+# Additional Information
 
 ## Development server
 

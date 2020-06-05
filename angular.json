@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "github-repo-app-angular"
+    }
+  },
+  "defaultProject": "github-repo-app-angular",
+  "cli": {
+    "analytics": false
+  }
 }

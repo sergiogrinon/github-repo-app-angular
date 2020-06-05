@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../core/services/http/http.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent implements OnInit {
+  repoName: string;
 
-  constructor() { }
+  constructor(private commonHttpService: HttpService) { }
 
   ngOnInit(): void {
+  }
+
+  getRepositoriesData() {
+    this.commonHttpService.callGetRepositories(this.repoName);
   }
 
 }

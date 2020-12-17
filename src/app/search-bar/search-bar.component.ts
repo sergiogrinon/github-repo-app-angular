@@ -14,7 +14,11 @@ export class SearchBarComponent implements OnInit {
   isLoadingCondition: boolean;
 
   @Input() isLoading: boolean;
+  @Input() isLoaded: boolean;
+  @Input() resultList: Array<any>;
   @Output() loadingStatusChange = new EventEmitter<unknown>();
+  @Output() loadedStatusChange = new EventEmitter<unknown>();
+  @Output() fillParentList = new EventEmitter<unknown>();
 
   constructor(private commonHttpService: HttpService, appComponent: AppComponent) { }
 
@@ -24,8 +28,11 @@ export class SearchBarComponent implements OnInit {
   }
 
   getRepositoriesData() {
+    if(this.isLoaded) {
+      this.loadedStatusChange.emit();
+    }
+    this.resultList = new Array<GithubResult>();
     this.loadingStatusChange.emit();
-    console.log("Evento emitido 1");
     this.commonHttpService.callGetRepositories(this.repoName).then((response: any) => {
       this.transformRepositoriesData(response);
     });
@@ -42,9 +49,11 @@ export class SearchBarComponent implements OnInit {
         bugs: tempItem.open_issues
       }
       this.resultsProcessedList.push(gitHubProcessedResult);
+      this.resultList.push(gitHubProcessedResult);
     }
     this.loadingStatusChange.emit();
-    console.log(this.resultsProcessedList);
+    this.loadedStatusChange.emit();
+    this.fillParentList.emit(this.resultsProcessedList);
   }
 
 }

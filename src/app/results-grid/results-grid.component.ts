@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { GithubResult } from '../configs/github-result';
 import { SearchBarComponent } from '../search-bar/search-bar.component';
 
 @Component({
@@ -7,13 +8,17 @@ import { SearchBarComponent } from '../search-bar/search-bar.component';
   styleUrls: ['./results-grid.component.css']
 })
 export class ResultsGridComponent implements OnInit {
-  resultList = this.searchBarComponent.resultsProcessedList;
 
-  constructor(private searchBarComponent: SearchBarComponent) {
-    
+  @Input() resultList: [];
+  @Input() isLoading: boolean;
+  @Input() isLoaded: boolean;
+
+  constructor() {
+
    }
 
   ngOnInit(): void {
+    this.resultList = [];
   }
 
 }

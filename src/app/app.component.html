@@ -1,3 +1,6 @@
-<app-search-bar [isLoading]="isLoading" (loadingStatusChange)="changeLoadingStatus()"></app-search-bar>
-<app-results-grid></app-results-grid>
+<app-search-bar [isLoading]="isLoading" [resultList]="processedResultList"
+                [isLoaded]="isLoaded" (loadingStatusChange)="changeLoadingStatus()"
+                (loadedStatusChange)="changeLoadedStatus()" (fillParentList)="fillList($event)"></app-search-bar>
+<app-results-grid [resultList]="processedResultList" [isLoading]="isLoading"
+                  [isLoaded]="isLoaded"></app-results-grid>
 <router-outlet></router-outlet>

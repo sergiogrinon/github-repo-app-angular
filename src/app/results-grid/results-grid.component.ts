@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchBarComponent } from '../search-bar/search-bar.component';
 
 @Component({
   selector: 'app-results-grid',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./results-grid.component.css']
 })
 export class ResultsGridComponent implements OnInit {
+  resultList = this.searchBarComponent.resultsProcessedList;
 
-  constructor() { }
+  constructor(private searchBarComponent: SearchBarComponent) {
+    
+   }
 
   ngOnInit(): void {
   }

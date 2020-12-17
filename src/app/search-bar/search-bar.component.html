@@ -1,1 +1,18 @@
-<p>search-bar works!</p>
+<div class="d-flex justify-content-center margin-top-medium margin-bottom-medium">
+    <img src="../../assets/images/github-drawing-loog.png" width="30%" height="30%">
+</div>
+<div style="margin: auto; margin-top: 5px; width:600px;">
+    <div class="input-group flex-nowrap">
+        <input type="text" 
+            class="form-control" 
+            placeholder="Escribe el nombre del repositorio que quieres buscar..."
+            aria-describedby="addon-wrapping"
+            [(ngModel)]="repoName" />
+        <div style="margin-left:30px;">
+            <button type="button" class="btn btn-dark" (click)="getRepositoriesData()"><b>Buscar</b></button>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center margin-top-medium" *ngIf="isLoading">
+        <img src="../../assets/images/github-loafing.gif" width="75px" height="75px">
+    </div>
+</div>

@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'github-repo-app-angular';
+  isLoading: boolean = false;
+
+  changeLoadingStatus() {
+    this.isLoading = !this.isLoading;
+    console.log(this.isLoading);
+  }
 }

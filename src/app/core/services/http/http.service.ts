@@ -14,7 +14,16 @@ export class HttpService {
 
   constructor(private githubReposServiceService: GithubReposServiceService) { }
 
-  callGetRepositories(repoName) {
-    this.githubReposServiceService.getRepositories(repoName);
+  callGetRepositories(repoName: string) {
+    let promise;
+    promise = new Promise((resolve, reject) => {
+      this.githubReposServiceService.getRepositories(repoName)
+      .then(response => {
+        resolve(response);
+      }, error => {
+        reject(error);
+      });
+    });
+    return promise;
   }
 }
